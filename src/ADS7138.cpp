@@ -35,7 +35,8 @@ void ADS7138::begin(int sda, int scl, int deviceAddress) {
     // configure I2C
     _deviceAddress = (deviceAddress != -1) ? deviceAddress : ADS7138_I2CADDR_DEFAULT;
     if(sda != -1 && scl != -1) {
-        Wire.setPins(sda, scl);
+        // Wire.setPins(sda, scl);
+        Wire.begin(sda, scl);
     }
     Wire.begin();
     // assume oversampling ratio is 1
