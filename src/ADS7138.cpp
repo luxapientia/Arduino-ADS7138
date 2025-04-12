@@ -31,13 +31,9 @@ ADS7138::ADS7138() {}
  * @param scl The pin for SCL.
  * @param deviceAddress The 7-bit I2C address of the ADS7138.
  */
-void ADS7138::begin(int sda, int scl, int deviceAddress) {
+void ADS7138::begin(int deviceAddress) {
     // configure I2C
     _deviceAddress = (deviceAddress != -1) ? deviceAddress : ADS7138_I2CADDR_DEFAULT;
-    if(sda != -1 && scl != -1) {
-        // Wire.setPins(sda, scl);
-        Wire.begin(sda, scl);
-    }
     Wire.begin();
     // assume oversampling ratio is 1
     _currentOsr = OSR_1;

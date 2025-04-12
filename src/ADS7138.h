@@ -149,7 +149,7 @@
 class ADS7138 {
     public:
         ADS7138();
-        void begin(int sda = -1, int scl = -1, int deviceAddress = -1);
+        void begin(int deviceAddress = -1);
         void setReferenceVoltage(uint32_t reference);
         void writeRegister8(uint8_t registerAddress, uint8_t value);
         void configureOpMode(ADS7138__OSC_SEL oscSel, ADS7138__CONV_MODE convMode, ADS7138__CONV_ON_ERR convOnErr);
