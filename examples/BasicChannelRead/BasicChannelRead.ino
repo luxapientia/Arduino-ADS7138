@@ -6,9 +6,6 @@
 
 #include <ADS7138.h>
 
-#define HW_ADC_SDA      33  // SDA pin
-#define HW_ADC_SCL      25  // SCL pin
-
 ADS7138 adc;
 
 void setup() {
@@ -17,7 +14,7 @@ void setup() {
 
   // configure ADC
   // set I2C pins
-  adc.begin(HW_ADC_SDA, HW_ADC_SCL);
+  adc.begin();
   // configure manual operation mode
   adc.configureOpMode(OSC_SEL_LOW_POWER, CONV_MODE_MANUAL, CONV_ON_ERR_CONTINUE);
   // disable auto sequence mode
